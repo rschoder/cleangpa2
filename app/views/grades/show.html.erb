@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Grade #<%= @grade.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @grade.user_id %></dd>
+
+      <dt>Course</dt>
+      <dd><%= @grade.course_id %></dd>
+
+      <dt>Number</dt>
+      <dd><%= @grade.number %></dd>
+
+      <dt>Letter</dt>
+      <dd><%= @grade.letter %></dd>
+
+      <dt>Schoolyear</dt>
+      <dd><%= @grade.schoolyear %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @grade.name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/grades" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/grades/<%= @grade.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_grade/<%= @grade.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
