@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Add Course</h3>
+  <h3><%=current_user.email%>, please add your course</h3>
 </div>
 
 <div class="row">
@@ -24,7 +24,7 @@
           Course name
         </label>
 
-        <input type="text" id="course_name" name="course_name" placeholder="Course name" class="form-control" value="<%= @course.course_name %>">
+        <input type="input" id="course_name" name="course_name" placeholder="Course name" class="form-control" value="<%= @course.course_name %>">
       </div>
 
       <button class="btn btn-success">

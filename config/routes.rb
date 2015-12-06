@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   get "/users/:id", :controller => "users", :action => "show"
 
-  delete "/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+
 
 
 
@@ -100,5 +100,5 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
- end
+
 end
