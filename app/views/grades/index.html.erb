@@ -9,6 +9,7 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th> Blah </th>
         <th>User</th>
         <th>Course</th>
         <th>Number</th>
@@ -20,12 +21,12 @@
 
       <% @grades.each do |grade| %>
       <tr>
+        <td><%= current_user.grades%></td>
         <td><%= grade.user_id %></td>
         <td><%= grade.course_id %></td>
         <td><%= grade.number %></td>
         <td><%= grade.letter %></td>
         <td><%= grade.schoolyear %></td>
-        <td><%= grade.name %></td>
         <td>
           <a href="/grades/<%= grade.id %>" class="btn btn-primary">Show</a>
           <a href="/grades/<%= grade.id %>/edit" class="btn btn-warning">Edit</a>

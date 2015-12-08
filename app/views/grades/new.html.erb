@@ -24,7 +24,7 @@
           User
         </label>
 
-        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user %>">
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user %>">
       </div>
 
       <!-- Label and input for course_id -->
@@ -33,9 +33,7 @@
           Course
         </label>
 
-        <input type="text" id="course_id" name="course_id" placeholder="Course" class="form-control" value="<%= @grade.course_id %>">
-      </div>
-
+        <%= select_tag 'course_id', options_from_collection_for_select(Course.all, 'id', 'course_name'),:class=> "form-control"%>
 
       <!-- Label and input for letter -->
       <div class="form-group">
@@ -43,7 +41,22 @@
           Letter
         </label>
 
-        <input type="text" id="letter" name="letter" placeholder="Letter" class="form-control" value="<%= @grade.letter %>">
+      <select id="letter" name="letter" class= "form-control">
+        <option value="4.0">A</option>
+        <option value="3.66">A-</option>
+        <option value="3.33">B+</option>
+        <option value="3.0">B</option>
+        <option value="2.66">B-</option>
+        <option value="2.33">C+</option>
+        <option value="2.0">C</option>
+        <option value="1.66">C-</option>
+        <option value="1.33">D+</option>
+        <option value="1.0">D</option>
+        <option value=".66">D-</option>
+        <option value="0">F</option>
+      </select>
+
+<input type="text" id="letter" name="letter" placeholder="Letter" class="form-control" value="<%= @grade.letter %>">
       </div>
 
       <!-- Label and input for number -->
@@ -62,15 +75,6 @@
         </label>
 
         <input type="text" id="schoolyear" name="schoolyear" placeholder="Schoolyear" class="form-control" value="<%= @grade.schoolyear %>">
-      </div>
-
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="control-label">
-          Name
-        </label>
-
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @grade.name %>">
       </div>
 
       <button class="btn btn-success">
