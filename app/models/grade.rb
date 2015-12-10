@@ -8,7 +8,6 @@ class Grade < ActiveRecord::Base
   validates :letter, :presence => true
   validates :number, :presence => true
   validates :schoolyear, :presence => true
-
   validates :course, :uniqueness => {:scope => :user}, :on => :save
 
 end
