@@ -5,6 +5,7 @@ class GradesController < ApplicationController
 
   def show
     @grade = Grade.find(params[:id])
+    @name = Course.find(params[:course_name])
   end
 
   def new
@@ -28,6 +29,8 @@ class GradesController < ApplicationController
 
   def edit
     @grade = Grade.find(params[:id])
+    @courseid = Course.find(params[:id])
+    @name = @courseid.course_name
   end
 
   def update
