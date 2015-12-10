@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @gradelet = @user.grades
+    @grades = @user.grades
 
    end
 
