@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'courses#index'
+  root 'grades#index'
 
   # Routes for the Course resource:
   # CREATE

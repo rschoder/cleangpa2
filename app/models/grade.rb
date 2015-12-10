@@ -4,4 +4,6 @@ class Grade < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :course, :uniqueness => {:scope => :user}
+
 end

@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h3>User #<%= current_user.id %> (<%=current_user.email%>)</h3>
+</div>
+
+
+<div class="row">
+  <div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          List of Users
+        </h3>
+      </div>
+
+      <ul class="list-group">
+        <% @users.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.email %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

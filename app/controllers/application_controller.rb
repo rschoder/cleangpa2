@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
+
+
   def courselist
     ["Financial Accounting",
     "Cost Analysis and Internal Controls",

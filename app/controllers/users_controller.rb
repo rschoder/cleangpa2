@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-  @user = User.find(params[:id])
-  @gpa = Photo.where(:user_id => params[:id])
-  end
+    @user = User.find(params[:id])
+    @courses = @user.grades
+   end
 
   def signout
   render "/devise/new"

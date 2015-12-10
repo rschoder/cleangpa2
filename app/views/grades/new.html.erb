@@ -24,7 +24,7 @@
           User
         </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for course_id -->
@@ -42,39 +42,41 @@
         </label>
 
       <select id="letter" name="letter" class= "form-control">
-        <option value="A1">A</option>
-        <option value="B2">A-</option>
-        <option value="B1">B+</option>
-        <option value="B2">B</option>
-        <option value="B3">B-</option>
-        <option value="C1">C+</option>
-        <option value="C2">C</option>
-        <option value="C3">C-</option>
-        <option value="D1">D+</option>
-        <option value="D2">D</option>
-        <option value="F">F</option>
+        <option value="A+">A+ (4.3)</option>
+        <option value="A">A (4.0)</option>
+        <option value="A-">A- (3.66)</option>
+        <option value="B+">B+ (3.33)</option>
+        <option value="B">B (3.0)</option>
+        <option value="B-">B- (2.66)</option>
+        <option value="C+">C+ (2.33)</option>
+        <option value="C">C (2.0)</option>
+        <option value="C-">C- (1.66)</option>
+        <option value="D+">D+ (1.33)</option>
+        <option value="D">D (1.0)</option>
+        <option value="F">F (0.0)</option>
       </select>
 
       <!-- Label and input for number -->
       <div class="form-group">
         <label for="number" class="control-label">
-          Value
+          Select Corresponding Value (in parenthesis above)
         </label>
 
-        <input type="text" id="number" name="number" placeholder="Number" class="form-control" value="<%= @grade.number %>">
-
-        <select id="letter" name="letter" class= "form-control">
+        <select id="number" name="number" class= "form-control">
+        <option value="4.3">4.3</option>
         <option value="4">4.0</option>
-        <option value="366">3.66</option>
-        <option value="333">3.33</option>
-        <option value="30">3.0</option>
-        <option value="266">2.66</option>
-        <option value="233">2.33</option>
-        <option value="2">2.0</option>
-        <option value="166">1.66</option>
-        <option value="133">1.33</option>
-        <option value="100">1.0</option>
-        <option value="000">0.0</option>
+        <option value="3.66">3.66</option>
+        <option value="3.33">3.33</option>
+        <option value="3.0">3.0</option>
+        <option value="2.66">2.66</option>
+        <option value="2.33">2.33</option>
+        <option value="2.0">2.0</option>
+        <option value="1.66">1.66</option>
+        <option value="1.33">1.33</option>
+        <option value="1.00">1.0</option>
+        <option value="0.00">0.0</option>
+        </select>
+
       </div>
 
       <!-- Label and input for schoolyear -->

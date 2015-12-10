@@ -1,7 +1,6 @@
 class GradesController < ApplicationController
   def index
     @grades = Grade.all
-    @course = Course.all
   end
 
   def show
@@ -10,7 +9,6 @@ class GradesController < ApplicationController
 
   def new
     @grade = Grade.new
-    @course = Course.new
   end
 
   def create
@@ -40,7 +38,6 @@ class GradesController < ApplicationController
     @grade.number = params[:number]
     @grade.letter = params[:letter]
     @grade.schoolyear = params[:schoolyear]
-    @grade.name = params[:name]
 
     if @grade.save
       redirect_to "/grades", :notice => "Grade updated successfully."
