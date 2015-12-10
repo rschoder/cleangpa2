@@ -14,15 +14,12 @@
 
       <%= @grades.each do |grade|%>
 
+      <%grade.course%>
+      <%end%>
 
-      <%grades.course%>
 
-      <%= @courses.each do |course|%>
 
-        <%= course.letter %>
 
-      <dd><%= Course.where(id: @user.grades).name %> <dd>
-      <% end %>
       <dt>Schoolyear</dt>
 
     </dl>
