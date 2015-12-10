@@ -6,29 +6,20 @@
   <div class="col-md-12">
     <dl class="dl-horizontal">
 
-
-      <dt>User</dt>
-      <dd><%= @user.email %></dd>
-
    <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
         <th>Course name</th>
         <th>Year Taken</th>
       </tr>
-
+      <tbody>
+      <% @grades.each do |grade|%>
       <tr>
-      <td><% @grades.each do |grade|%>
-        <dd><%=grade.course_id%></dd>
+      <td><%=grade.course_id%></td>
+      <td><%=grade.schoolyear%></td>
+      </tr>
       <%end%>
-      </td>
-      <td><% @grades.each do |grade|%>
-
-      <dd><%=grade.schoolyear%></dd>
-      <%end%>
-    </td>
-    </tr>
-
+      </tbody>
     </table>
 
     </dl>
