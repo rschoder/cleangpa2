@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @courses = @user.grades
+    @gradelet = @user.grades
+    @coursename = @grades.courses
    end
 
   def signout

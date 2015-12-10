@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Grade #<%= @grade.id %></h3>
+  <h3>Edit Grade for #<%= @grade.course_id %></h3>
 </div>
 
 <div class="row">
@@ -20,11 +20,8 @@
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @grade.user_id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for course_id -->
@@ -33,16 +30,7 @@
           Course
         </label>
 
-        <input type="text" id="course_id" name="course_id" placeholder="Course" class="form-control" value="<%= @grade.course_id %>">
-      </div>
-
-      <!-- Label and input for number -->
-      <div class="form-group">
-        <label for="number" class="control-label">
-          Number
-        </label>
-
-        <input type="text" id="number" name="number" placeholder="Number" class="form-control" value="<%= @grade.number %>">
+        <%= select_tag 'course_id', options_from_collection_for_select(Course.all, 'id', 'course_name'),:class=> "form-control"%>
       </div>
 
       <!-- Label and input for letter -->
@@ -50,14 +38,53 @@
         <label for="letter" class="control-label">
           Letter
         </label>
+        <select id="letter" name="letter" class= "form-control">
+        <option value ="<%=@grade.letter%>"><%=@grade.letter%></option>
+        <option value="A+">A+ (4.3)</option>
+        <option value="A">A (4.0)</option>
+        <option value="A-">A- (3.66)</option>
+        <option value="B+">B+ (3.33)</option>
+        <option value="B">B (3.0)</option>
+        <option value="B-">B- (2.66)</option>
+        <option value="C+">C+ (2.33)</option>
+        <option value="C">C (2.0)</option>
+        <option value="C-">C- (1.66)</option>
+        <option value="D+">D+ (1.33)</option>
+        <option value="D">D (1.0)</option>
+        <option value="F">F (0.0)</option>
+      </select>
+      </div>
 
-        <input type="text" id="letter" name="letter" placeholder="Letter" class="form-control" value="<%= @grade.letter %>">
+
+            <!-- Label and input for number -->
+      <div class="form-group">
+        <label for="number" class="control-label">
+          Corresponding Value
+        </label>
+
+
+      <select id="number" name="number" class= "form-control">
+        <option value="<%=@grade.number%>"><%=@grade.number%></option>
+        <option value="4.3">4.3</option>
+        <option value="4">4.0</option>
+        <option value="3.66">3.66</option>
+        <option value="3.33">3.33</option>
+        <option value="3.0">3.0</option>
+        <option value="2.66">2.66</option>
+        <option value="2.33">2.33</option>
+        <option value="2.0">2.0</option>
+        <option value="1.66">1.66</option>
+        <option value="1.33">1.33</option>
+        <option value="1.00">1.0</option>
+        <option value="0.00">0.0</option>
+        </select>
+
       </div>
 
       <!-- Label and input for schoolyear -->
       <div class="form-group">
         <label for="schoolyear" class="control-label">
-          Schoolyear
+          Year Taken
         </label>
 
         <input type="text" id="schoolyear" name="schoolyear" placeholder="Schoolyear" class="form-control" value="<%= @grade.schoolyear %>">
