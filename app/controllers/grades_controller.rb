@@ -5,7 +5,7 @@ class GradesController < ApplicationController
 
   def show
     @grade = Grade.find(params[:id])
-    @name = Course.find(params[:course_name])
+
   end
 
   def new
