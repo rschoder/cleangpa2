@@ -13,9 +13,9 @@
         <th>Year Taken</th>
       </tr>
       <tbody>
-      <% @grades.each do |grade|%>
+      <% @user.grades.each do |grade|%>
       <tr>
-      <td><%=grade.course.course_name%></td>
+      <td><a href = "/courses/<%= grade.course.id %>"><%=grade.course.course_name%></td></a>
       <td><%=grade.schoolyear%></td>
       </tr>
       <%end%>

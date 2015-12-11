@@ -1,19 +1,16 @@
 <div class="page-header">
-  <h3><%= Course.find(@grade.course_id).course_name%></h3>
+  <h3><a href = "/courses/<%= @grade.course.id %>"><%= Course.find(@grade.course_id).course_name%></h3></a>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
 
-      <dt>Course</dt>
-      <dd><%= Course.find(@grade.course_id).course_name %></dd>
+      <dt>Letter</dt>
+      <dd><%= @grade.letter %></dd>
 
       <dt>Number</dt>
       <dd><%= @grade.number %></dd>
-
-      <dt>Letter</dt>
-      <dd><%= @grade.letter %></dd>
 
       <dt>Schoolyear</dt>
       <dd><%= @grade.schoolyear %></dd>

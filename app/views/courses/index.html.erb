@@ -15,7 +15,7 @@
 
       <% @courses.each do |course| %>
       <tr>
-        <td><%= course.course_name %></td>
+        <td><a href = "/courses/<%= course.id %>"><%= course.course_name %></td></a>
         <td>
           <a href="/courses/<%= course.id %>" class="btn btn-primary">Show</a>
           <a href="/courses/<%= course.id %>/edit" class="btn btn-warning">Edit</a>
