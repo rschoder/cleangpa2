@@ -15,7 +15,7 @@
       <tbody>
       <% @grades.each do |grade|%>
       <tr>
-      <td><%=Course.find(grade.course_id).course_name%></td>
+      <td><%=grade.course.course_name%></td>
       <td><%=grade.schoolyear%></td>
       </tr>
       <%end%>
